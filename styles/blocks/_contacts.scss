@@ -1,0 +1,46 @@
+@use '../helpers' as *;
+
+.contacts {
+    &__body {
+        display: flex;
+        gap: rem(40);
+
+        @include tablet {
+            flex-direction: column;
+        }
+    }
+
+    &__line {
+        height: rem(282);
+
+        @include tablet {
+            height: rem(2);
+            width: rem(292);
+        }
+    }
+
+    &__divider {
+        width: 100%;
+        max-width: rem(100);
+
+        @include tablet {
+            flex-direction: row;
+            max-width: 100%;
+            height: rem(120);
+        }
+    }
+
+    &__group-arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include tablet {
+            transform: rotate(90deg)
+        }
+    }
+
+    &__arrow-left, &__arrow-right  {
+        @include square(rem(64));
+    }
+}

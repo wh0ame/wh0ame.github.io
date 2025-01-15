@@ -1,0 +1,69 @@
+@use "../helpers" as * ;
+
+.blog {
+    &__inner {
+        padding-top: rem(80);
+        padding-bottom: rem(140);
+
+        @include mobile {
+            padding-bottom: rem(80);
+        }
+    }
+
+    &__list {
+        display: flex;
+        gap: rem(30);
+
+        @media (max-width:rem(570)) { 
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        &-item {
+            max-width: rem(337);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        
+            @include laptop {
+                &:nth-child(3) {
+                    display: none;
+                }
+            }
+
+            @include tablet {
+                &:nth-child(2) {
+                    display: none;
+                }
+            }
+
+        }
+
+        &-item-content  {
+            padding: rem(20) rem(30) rem(40) rem(30); 
+
+            &--link {
+                height: rem(420);
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
+
+        &-item-title {
+            margin-bottom: rem(10);
+            font-weight: 400;
+            line-height: 1.35;
+            color: var(--color-light);
+
+            &--link {
+                font-size: rem(20);
+                font-weight: 600;
+            }
+        }
+
+        &-item-description {
+            margin-bottom: rem(12);
+            line-height: 1.4;
+        } 
+    }
+}

@@ -1,0 +1,7 @@
+@use "../helpers" as * ;
+
+.burger-button {
+    color: var(--color-primary);
+    width: 100%;
+    max-width: rem(115);
+}

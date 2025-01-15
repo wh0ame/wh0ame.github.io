@@ -1,0 +1,266 @@
+@use "../helpers" as * ;
+
+.tabs {
+
+    &.container {
+        @include mobile {
+            padding-inline: 0;
+        }
+    }
+
+
+    &__inner {
+        padding-block: rem(100);
+        display: grid;
+        grid-template-columns: auto rem(1272) auto;
+        column-gap: rem(10);
+        grid-template-areas: 
+            'header header header'
+            'arrow-left body arrow-right';    
+
+        
+        @include laptop {
+            max-width: rem(942);
+            grid-template-columns: rem(64) rem(774) rem(64);
+            margin: 0 auto
+        }
+
+        @include tablet {
+            grid-template-columns: rem(64) rem(520) rem(64);
+        }
+
+        @include mobile {
+            padding-block: rem(30);
+            grid-template-columns: rem(150) rem(150);
+            grid-template-rows: rem(240) auto;
+            grid-template-areas: 
+            'body body'
+            'arrow-left arrow-right'; 
+        }
+    }
+
+    &__arrow {
+        @include square(rem(64));
+        @include hover {
+            svg > path {
+                transition-duration: var(--transition-duration);
+                stroke-opacity: 50%;
+            }
+        }
+
+        background-color: transparent;
+        border: transparent;
+        align-self: center;
+        padding: 0;
+
+        &--left {
+            grid-area: arrow-left;
+
+            @include mobile {
+                justify-self: end;
+            }
+        }
+
+        &--right {
+            grid-area: arrow-right;
+
+            @include mobile {
+                justify-self: start;
+            }
+        }
+    }
+
+    &__header {
+        
+        grid-area: header;
+        display: flex;
+        justify-content: center;
+        @include mobile {
+            display: none;
+        }
+
+        @include laptop {
+            max-width: rem(744);
+            margin: 0 auto;
+        }
+    }
+
+    &__content {
+        display: flex;
+        width: 100%;
+        &:not(.is-active) {
+            display: none;
+        }
+    }
+
+    &__buttons {
+        max-width: rem(838);
+        padding-bottom: rem(40);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: rem(30);
+
+        @include tablet {
+            max-width: rem(520);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @include mobile-s {
+            display: none;
+        }
+    }
+
+    &__button {
+        @include hover {
+            background: rgba(255, 255, 255, 0.05);
+
+            .tabs__button-label--all {
+                background-color: var(--color-primary);
+            }
+            .tabs__button-label--tl {
+                background-color: var(--color-secondary);
+            }
+            .tabs__button-label--dev {
+                background-color: var(--color-primary);
+            }
+            .tabs__button-label--devl {
+                background-color: var(--color-accent);
+            }
+        }
+
+        max-width: rem(248);
+        height: rem(48);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        column-gap: rem(20);
+        padding-block: rem(10);
+        padding-inline: rem(15);
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: 1.75;
+        color: var(--color-gray);
+        background-color: transparent;
+        border: none;
+        white-space: nowrap;
+
+        &.is-active {
+            background: rgba(255, 255, 255, 0.05);
+            pointer-events: none;
+
+            .tabs__button-label--all {
+                background-color: var(--color-primary);
+            }
+            .tabs__button-label--tl {
+                background-color: var(--color-secondary);
+            }
+            .tabs__button-label--dev {
+                background-color: var(--color-primary);
+            }
+            .tabs__button-label--devl {
+                background-color: var(--color-accent);
+            }
+        }
+
+        &-label {
+            display: flex;
+            align-items: center;
+            height: rem(22);
+            font-weight: 600;
+            font-size: rem(12);
+            color: rgba(255, 255, 255, 0.8);
+            padding-block: rem(4);
+            padding-inline: rem(10);
+            border: #{rem(1)} solid transparent;
+
+            &--all {
+                border-color: var(--color-primary);
+            }
+
+            &--tl {
+                border-color: var(--color-secondary);
+            }
+
+            &--dev {
+                border-color: var(--color-primary);
+            }
+
+            &--devl {
+                border-color: var(--color-accent);
+            }
+        }
+    }
+
+    &__body {
+        grid-area: body;
+
+        &-inner {
+            display: flex;
+            overflow: hidden;
+            @include mobile-above {
+                display: block;
+            }          
+        }
+
+        @include laptop {
+            max-width: rem(774);
+        }
+        
+        @include tablet {
+            max-width: rem(520);
+        }
+
+        @include mobile {
+            max-width: rem(300);
+            overflow: hidden;
+        }
+
+        &-row-first {
+            display: flex;
+            column-gap: rem(20);
+
+            @include laptop {
+                column-gap: rem(20);
+            }
+
+            @include mobile {
+                display: contents;
+            }
+        }
+
+        &-row-second {
+            display: flex;
+            column-gap: rem(20);
+
+            @include laptop {
+                column-gap: rem(20);
+            }
+
+            @include mobile {
+                display: contents;
+            }
+        }
+
+        // &-inner {
+        //     display: flex;
+        //     flex-wrap: wrap; 
+        //     overflow: hidden; 
+        //     width: 1272px;
+
+        //     @include laptop {
+        //         width: rem(774);
+        //     }
+
+        //     @include tablet-above {
+        //         column-gap: rem(10);
+        //         row-gap: rem(20);
+        //     }
+    
+        //     @include laptop-above {
+        //         gap: rem(20);
+        //     }
+        // }
+    }
+}

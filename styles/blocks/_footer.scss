@@ -1,0 +1,43 @@
+@use "../helpers" as * ;
+
+.footer {
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        row-gap: rem(30);
+        padding-top: rem(100);
+        padding-bottom: rem(150);
+    }
+
+    &__arrow-link {
+        svg path {
+            transition: stroke var(--transition-duration), stroke-opacity var(--transition-duration);
+        }
+
+        @include hover {
+            svg path {
+                 // Изменяем цвет обводки на primary
+                stroke-opacity: 0.5; // Убираем прозрачность
+            }
+        }
+        position: relative;
+
+        &::after {
+            @include square(rem(64));
+            @include abs-center;
+            content: '';
+        }
+        color: rgba(255, 255, 255, 0.25);
+    }
+
+    &__logo {
+        @include fluid-text(32, 32);
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        color: var(--color-light);
+    }
+}

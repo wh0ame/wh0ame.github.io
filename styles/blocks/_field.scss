@@ -1,0 +1,30 @@
+@use '../helpers' as *;
+
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    &__control {
+        color: var(--color-gray);
+        width: 100%;
+        padding: rem(16) rem(20);
+        background: #111418;
+        border: none;
+        margin-bottom: rem(20);
+
+        ::placeholder {
+            color: var(--color-gray);
+            font-weight: 400;
+            font-size: rem(14);
+        }
+
+
+    }
+
+    textarea.field__control {
+        resize: vertical;
+        min-height: rem(142);
+        padding: rem(21) rem(20);
+    }
+}

@@ -1,0 +1,41 @@
+@use "helpers" as *;
+
+:root {
+    --color-light: #ffffff;
+    --color-gray: #C1C1C1;
+    --color-black: #222222;
+    --color-accent: #ea5b0c;
+    --color-primary: #5483fc;
+    --color-secondary: #4c53f3;
+    --color-dark-blue: #0A1623;
+
+    --font-family-base: "Golos Text", sans-serif;
+    --font-family-accent: "Open Sans", sans-serif;
+
+    --container-width: #{rem(1420)};
+    --container-padding-x: #{rem(10)};
+
+
+    @include laptop {
+        --container-width: #{rem(942)};
+    }
+
+    @include tablet {
+        --container-width: #{rem(668)};
+    }
+
+    // @include tablet-above {
+    //     --container-padding-x: #{rem(20)};
+    // }
+
+    @include mobile {
+        --container-width: #{100%};
+        --container-padding-x: #{rem(10)};
+    }
+
+    --transition-duration: 0.2s;
+
+    --height-button: #{rem(52)};
+
+    --border-button: #{rem(2)} solid var(--color-primary);
+}

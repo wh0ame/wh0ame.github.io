@@ -1,0 +1,61 @@
+@use "../helpers" as * ;
+
+.metrics {
+    &__list {
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        padding-top: rem(80);
+        padding-bottom: rem(64);
+        row-gap: rem(40);
+
+        @include laptop {
+            padding-bottom: rem(40);
+        }
+
+        @include mobile {
+            row-gap: rem(30);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        column-gap: rem(30);
+        padding-bottom: rem(14);
+
+        @include laptop {
+            row-gap: rem(40);
+        }
+
+        @include mobile {
+            flex-direction: column-reverse;
+            row-gap: rem(30);
+        }
+    }
+
+    &__key {
+        font-weight: 400;
+        font-size: rem(32);
+        color: var(--color-light);
+        padding-top: rem(14);
+    }
+
+    &__value {
+        width: 100%;
+        max-width: rem(130);
+        font-weight: 700;
+        font-size: rem(60);
+        color: var(--color-light);
+    }
+
+    &__sing {
+        color: var(--color-primary);
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: rem(18);
+        color: rgba(255, 255, 255, 0.5);
+    }
+}

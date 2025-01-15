@@ -1,0 +1,17 @@
+@use '../helpers' as *;
+
+.bordered-flex {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    &__item {
+        width: 100%;
+        flex-grow: 1;
+        padding: rem(50) 0;
+
+        @include mobile {
+            padding: 0;
+        }
+    }
+}

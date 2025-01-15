@@ -1,0 +1,81 @@
+@use '../helpers' as *;
+
+.contacts-card {
+    
+
+    &__link-wrapper {
+        display: flex;
+        align-items: center;
+        padding: rem(30) rem(40);
+        border: 2px solid rgba(255, 255, 255, 0.1);
+
+        &:first-child {
+            margin-bottom: rem(20);
+        }
+
+        @include mobile {
+            padding: rem(30) rem(20);
+        }
+    }
+
+    &__col {
+        width: 100%;
+        max-width: rem(419);
+        display: flex;
+        gap: rem(30);
+
+        @include laptop {
+            flex-direction: column;
+        }
+
+        @include tablet {
+            flex-direction: row;
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__divider {
+        margin-inline: rem(40);
+
+        @include mobile {
+            margin-inline: rem(20);
+        }
+    }
+
+    &__line {
+        height: rem(52);
+    }
+
+    &__link-name {
+        width: 100%;
+        max-width: rem(238);
+        font-size: rem(18);
+        text-align: center;
+        color: var(--color-light);
+        align-self: center;
+
+        @include laptop {
+            text-align: left;
+            align-self: flex-start;
+        }
+
+        @include tablet {
+            text-align: center;
+            align-self: center;
+        }
+        @include tablet {
+            text-align: left;
+            align-self: flex-start;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        max-width: rem(151);
+    }
+
+
+}

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <title>Pavel Kvashin Development</title>
+    <script src="./scripts/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="background__inner background--gradient-bottom">
+            <video class="background__video" autoplay muted loop>
+                <source src="./videos/bg.mp4" type="video/mp4">
+            </video>
+            <header class="header" id="header" data-js-header>
+                <div class="header__body">
+                    <div class="header__body-inner container">
+                        <div class="header__logo logo">
+                            Pavel <br> Kvashin Development
+                        </div>
+                        <div class="header__overlay" data-js-header-overlay>
+                            <nav class="header__menu">
+                                <ul class="header__menu-list">
+                                    <li class="header__menu-item">
+                                        <a href="/" class="header__menu-link">.Главная</a>
+                                    </li>
+                                    <li class="header__menu-item">
+                                        <a href="/" class="header__menu-link" aria-label="Home" title="Home">
+                                            <svg class="icon icon--home" width="26" height="26" viewBox="0 0 26 26"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M2.16602 8.66667L12.709 3.39517C12.7992 3.35015 12.8986 3.32672 12.9993 3.32672C13.1001 3.32672 13.1995 3.35015 13.2897 3.39517L23.8327 8.66667M21.666 11.9167V20.5833C21.666 21.158 21.4377 21.7091 21.0314 22.1154C20.6251 22.5217 20.074 22.75 19.4993 22.75H6.49935C5.92471 22.75 5.37361 22.5217 4.96728 22.1154C4.56096 21.7091 4.33268 21.158 4.33268 20.5833V11.9167"
+                                                    stroke="white" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="header__menu-item">
+                                        <a href="/#tabs" class="header__menu-link">.Проекты</a>
+                                    </li>
+                                    <li class="header__menu-item">
+                                        <a href="#career" class="header__menu-link">.Преимущества</a>
+                                    </li>
+                                    <li class="header__menu-item">
+                                        <a href="#blog" class="header__menu-link">.Блог</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <a href="#contacts" class="header__contact-us-link button button--primary ">.Контакты</a>
+                        </div>
+                        <button type="button" class="header__burger-button burger-button button visible-tablet"
+                            aria-label="Open menu" title="Open menu" data-js-header-burger-button>
+                            .Меню
+                        </button>
+                    </div>
+                </div>
+            </header>
+            <section class="hero">
+                <div class="hero__inner container">
+                    <div class="hero__main">
+                        <div class="hero__corporate-portals">
+                            <h1 class="hero__title hero__title--right">Внедрение</br>корпоративных</br> порталов</h1>
+                            <div class="hero__description">
+                                <p>.Bitrix24</p>
+                            </div>
+                        </div>
+                        <div class="hero__divider divider">
+                            <div class="hero__line hero__line-first divider__line"></div>
+                            <div class="divider__circle"></div>
+                            <div class="hero__line hero__line-second divider__line"></div>
+                            <div class="divider__circle"></div>
+                            <div class="hero__line hero__line-third divider__line"></div>
+                        </div>
+                        <div class="hero__web-development">
+                            <h1 class="hero__title hero__title--left">
+                                Разработка<br>сайтов
+                            </h1>
+                            <div class="hero__description">
+                                <p>.1C_Bitrix</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="hero__arrow" href="#tabs">
+                        <svg width="34" height="46" viewBox="0 0 34 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 44.3334L1 28.3334M17 44.3334L33 28.3334M17 44.3334V16.3334M17 1.66671V8.33337"
+                                stroke="white" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    
+    <section id="tabs" class="tabs container" data-js-tabs>
+        <div class="tabs__inner">
+            <button class="tabs__arrow tabs__arrow--left" data-js-tabs-arrow>
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10.666 32L26.666 48M10.666 32L26.666 16M10.666 32H38.666M53.3327 32H46.666"
+                        stroke="white" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M53.3327 32H46.666" stroke="#5483FC" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+            <header class="tabs__header">
+                <div class="tabs__buttons" role="tablist">
+                    <button class="tabs__button is-active" id="tab-1" type="button" role="tab"
+                        aria-controls="tabpanel-1" data-js-tabs-button aria-selected="true">
+                        <span class="tabs__button-label tabs__button-label--all">All</span>
+                        Все роли
+                    </button>
+                    <button class="tabs__button" id="tab-2" type="button" role="tab" aria-controls="tabpanel-2"
+                        data-js-tabs-button aria-selected="false" tabindex="-1">
+                        <span class="tabs__button-label tabs__button-label--tl">TL</span>
+                        Тимлид
+                    </button>
+                    <button class="tabs__button" id="tab-3" type="button" role="tab" aria-controls="tabpanel-3"
+                        data-js-tabs-button aria-selected="false" tabindex="-1">
+                        <span class="tabs__button-label tabs__button-label--dev">DEV</span>
+                        Разработчик
+                    </button>
+                    <button class="tabs__button" id="tab-4" type="button" role="tab" aria-controls="tabpanel-4"
+                        data-js-tabs-button aria-selected="false" tabindex="-1">
+                        <span class="tabs__button-label tabs__button-label--devl">DEVL</span>
+                        Лидер разработки
+                    </button>
+                </div>
+            </header>
+            <div class="tabs__body">
+                <div class="tabs__body-inner">
+                    <div class="tabs__body-row-first">
+                        <div class="tabs__content is-active" id="tabpanel-1" aria-labelledby="tab-1" tabindex="0"
+                            data-js-tabs-content>
+                            <ul class="list list--all">
+                                <div class="list__row list__row--first list--all">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image1.png" alt="Автодом"
+                                                class="list__item-image" loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image2.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image3.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image4.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="list__row list--all">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image5.png" alt="" class="list__item-image"
+                                                loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image1.png" alt="" class="list__item-image"
+                                                loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image4.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image3.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="tabs__content" id="tabpanel-2" aria-labelledby="tab-2" tabindex="0"
+                            data-js-tabs-content>
+                            <ul class="list list--all">
+                                <div class="list__row list__row--first">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image1.png" alt="Автодом"
+                                                class="list__item-image" loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image4.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="list__row">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image5.png" alt="" class="list__item-image"
+                                                loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image3.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="tabs__content" id="tabpanel-3" aria-labelledby="tab-3" tabindex="0"
+                            data-js-tabs-content>
+                            <ul class="list list--all">
+                                <div class="list__row list__row--first">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image2.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image4.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="list__row">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image1.png" alt="" class="list__item-image"
+                                                loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image3.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="tabs__content" id="tabpanel-4" aria-labelledby="tab-4" tabindex="0"
+                            data-js-tabs-content>
+                            <ul class="list list--all">
+                                <div class="list__row list__row--first">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image3.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy" />
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image4.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                                <div class="list__row">
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image4.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                    <li class="list__item">
+                                        <div class="list__item-label-wrapper">
+                                            <div class="list__item-label list__item-label--dev">DEV</div>
+                                            <div class="list__item-label list__item-label--tl">TL</div>
+                                            <div class="list__item-label list__item-label--devl">DEVL</div>
+                                        </div>
+                                        <div class="list__item-image-wrapper">
+                                            <img src="./images/tab-image3.png" alt="Anytime"
+                                                class="list__item-image" loading="lazy">
+                                        </div>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="tabs__arrow tabs__arrow--right" data-js-tabs-arrow>
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M53.334 32L37.334 48M53.334 32L37.334 16M53.334 32H25.334M10.6673 32H17.334"
+                        stroke="white" stroke-opacity="0.25" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    <path d="M10.6673 32H17.334" stroke="#5483FC" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="career" class="career">
+        <div class="career__inner container">
+            <div class="career__about-me about-me">
+                <div class="about-me__inner">
+                    <h2 class="about-me__title">Обо мне</h2>
+                    <div class="about-me__content">
+                        <div class="about-me__description">
+                            <p>Я, как частный веб-разработчик, предлагаю практически все те же услуги, что и целые
+                                веб-студии, но по гораздо более низкой стоимости, так как Вы платите только за сами услуги,
+                                без наценки на зарплату менеджерам, директорам и так далее.</p>
+                        </div>
+                        <img src="./images/gold-partner.png" alt="Золотой сертифицированный партнер" class="about-me__image" width="139" height="80">
+                    </div>
+                </div>
+                <a href="/"  class="career__button button button--primary">.Сертификаты</a>
+            </div>
+            <div class="career__divider divider">
+                <div class="career__line career__line--first divider__line"></div>
+                <div class="career__circle divider__circle"></div>
+                <div class="career__line career__line--second divider__line"></div>
+            </div>
+            <div class="career__metrics metrics">
+                <dl class="metrics__list">
+                    <div class="metrics__item">
+                        <dt class="metrics__key">
+                            Разработка сайтов на 1С-Битрикс
+                        </dt>
+                        <dd class="metrics__value">
+                            10<span class="metrics__sing">+</span>
+                            <div class="metrics__description">лет</div>
+                        </dd>
+                    </div>
+                    <div class="metrics__item">
+                        <dt class="metrics__key">
+                            Внедрение корпоративных порталов
+                        </dt>
+                        <dd class="metrics__value">
+                            5<span class="metrics__sing">+</span>
+                            <div class="metrics__description">лет</div>
+                        </dd>
+                    </div>
+                    <div class="metrics__item">
+                        <dt class="metrics__key">
+                            Опыт работы с Маркетплейс 1С-Битрикс
+                        </dt>
+                        <dd class="metrics__value">
+                            10<span class="metrics__sing">+</span>
+                            <div class="metrics__description">решений</div>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <section id="blog" class="blog">
+        <div class="blog__inner container">
+            <ul class="blog__list">
+                <li class="blog__list-item">
+                    <img src="./images/blog-1.png" alt="" class="blog__list-item-image"/>
+                    <div class="blog__list-item-content">
+                        <h3 class="blog__list-item-title">Длинное название новости в две и более строк с ограничениями</h3>
+                        <div class="blog__list-item-description">
+                            <p>Небольшое описание анонса в несколько строк и ограничением текста</p>
+                        </div>
+                        <data class="blog__list-item-date" value="22.03.2021">22.03.2021</data>
+                    </div>
+                </li>
+                <li class="blog__list-item">
+                    <img src="./images/blog-2.png" alt="" class="blog__list-item-image"/>
+                    <div class="blog__list-item-content">
+                        <h3 class="blog__list-item-title">Длинное название новости в две и более строк с ограничениями</h3>
+                        <div class="blog__list-item-description">
+                            <p>Небольшое описание анонса в несколько строк и ограничением текста</p>
+                        </div>
+                        <data class="blog__list-item-date" value="22.03.2021">22.03.2021</data>
+                    </div>
+                </li>
+                <li class="blog__list-item">
+                    <img src="./images/blog-3.png" alt="" class="blog__list-item-image"/>
+                    <div class="blog__list-item-content">
+                        <h3 class="blog__list-item-title">Длинное название новости в две и более строк с ограничениями</h3>
+                        <div class="blog__list-item-description">
+                            <p>Небольшое описание анонса в несколько строк и ограничением текста</p>
+                        </div>
+                        <data class="blog__list-item-date" value="22.03.2021">22.03.2021</data>
+                    </div>
+                </li>
+                <li class="blog__list-item">
+                    <div class="blog__list-item-content blog__list-item-content--link">
+                        <h3 class="blog__list-item-title blog__list-item-title--link">Длинное название новости в две и более строк с ограничениями</h3>
+                        <a href="" class="blog__button button button--primary">.В блог</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+
+    <div class="background">
+        <div class="background__inner background--gradient-top">
+            <video class="background__video" autoplay muted loop>
+                <source src="./videos/bg.mp4" type="video/mp4">
+            </video>     
+            <section id="contacts" class="contacts">
+                <div class="contacts__body container">
+                    <form action="/" class="feedback-form">
+                        <div class="feedback-form__cell field">
+                            <h2 class="feedback-form__title">Обратная связь</h2>
+                        </div>
+                        <div class="feedback-form__cell field">
+                            <div class="feedback-form__description">
+                                <p>Опишите ваш проект, как вы его видите и что хотите получить в финале.</p>
+                            </div> 
+                        </div>
+                        <div class="feedback-form__cell field">
+                            <label for="firstName" class="field__label"></label>
+                            <input type="text" class="field__control" id="firstName" placeholder="Ваше имя" required>
+                        </div>
+                        <div class="feedback-form__cell field">
+                            <label for="email" class="field__label"></label>
+                            <input type="email" class="field__control" id="email" placeholder="Ваша почта" required>
+                        </div>
+                        <div class="feedback-form__cell field">
+                            <label for="message" class="field__label"></label>
+                            <textarea type="email" class="field__control" id="message" placeholder="Комментарий" required></textarea>
+                        </div>
+                        <div class="feedback-form__cell field">
+                            <button class="feedback-form__submit-button button button--primary" type="submit">Отправить</button>
+                        </div>
+                    </form>
+                    <div class="contacts__divider divider">
+                        <div class="contacts__line contacts__line--first divider__line"></div>
+                        <div class="contacts__group-arrow">
+                            <div class="contacts__arrow-left icon icon--left"></div>
+                            <div class="contacts__arrow-right icon icon--right"></div>
+                        </div>
+                        <div class="contacts__line contacts__line--second divider__line"></div>
+                    </div>
+                    <ul class="bordered-flex">
+                        <li class="bordered-flex__item">
+                            <div class="contacts-card">
+                                <div class="contacts-card__body">
+                                    <div class="contacts-card__link-wrapper">
+                                        <span class="icon icon--white-whatsapp"></span>
+                                        <div class="contacts-card__divider divider">
+                                            <div class="contacts-card__line contacts-card__line--first divider__line"></div>
+                                        </div>
+                                        <div class="contacts-card__col">
+                                            <span class="contacts-card__link-name">WhatsApp</span>
+                                            <a href="tel:" class="contacts-card__button button button--primary">.Написать</a>
+                                        </div>
+                                    </div>
+                                    <div class="contacts-card__link-wrapper">
+                                        <span class="icon icon--white-telegram"></span>
+                                        <div class="contacts-card__divider divider">
+                                            <div class="contacts-card__line contacts-card__line--first divider__line"></div>
+                                        </div>
+                                        <div class="contacts-card__col">
+                                            <span class="contacts-card__link-name">Telegram</span>
+                                            <a href="" class="contacts-card__button button button--primary">.Написать</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="footer__inner container">
+                    <a class="footer__arrow-link" href="#header">
+                        <svg width="34" height="46" viewBox="0 0 34 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M17 1.6665L1 17.6665M17 1.6665L33 17.6665M17 1.6665V29.6665M17 44.3332V37.6665"
+                                stroke="white" stroke-opacity='0.25'; stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </a>
+                    <div class="footer__logo">
+                        Pavel Kvashin Development
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

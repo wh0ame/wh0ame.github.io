@@ -1,0 +1,42 @@
+@use '../helpers' as *;
+
+.icon {
+    display: inline-flex;
+    align-items: center;
+
+    &::after {
+        --size: #{rem(50)};
+
+        @include square(var(--size));
+
+        content: "";
+        flex-shrink: 0;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &--home {
+        &::after {
+            background-image: url('../../icons/home.svg');
+            width: 26px;
+            height: 26px;
+        }
+    }
+
+    &--white-whatsapp {
+        background-image: url('../../icons/whatsapp.svg');
+    }
+
+    &--white-telegram {
+        background-image: url('../../icons/telegram.svg');
+    }
+
+    &--left {
+        background-image: url('../../icons/arrow-left.svg');
+    }
+
+    &--right {
+        background-image: url('../../icons/arrow-right.svg');
+    }
+}
