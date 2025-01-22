@@ -49,7 +49,6 @@
 
         &-list {
             display: flex;
-            align-items: center;
             column-gap: rem(40);
 
             @include tablet {
@@ -100,6 +99,7 @@
     &__contact-us-link {
         max-width: rem(152);
         margin-left: rem(20);
+        justify-content: flex-start;
 
         @include tablet {
             margin-left: 0;

@@ -8,9 +8,9 @@
         }
     }
 
-
     &__inner {
         padding-block: rem(100);
+        padding-bottom: 0;
         display: grid;
         grid-template-columns: auto rem(1272) auto;
         column-gap: rem(10);
@@ -18,7 +18,6 @@
             'header header header'
             'arrow-left body arrow-right';    
 
-        
         @include laptop {
             max-width: rem(942);
             grid-template-columns: rem(64) rem(774) rem(64);
@@ -48,9 +47,11 @@
             }
         }
 
+        position: relative;
+        top: 217px;
+
         background-color: transparent;
         border: transparent;
-        align-self: center;
         padding: 0;
 
         &--left {
@@ -58,6 +59,7 @@
 
             @include mobile {
                 justify-self: end;
+                top: 0;
             }
         }
 
@@ -66,12 +68,12 @@
 
             @include mobile {
                 justify-self: start;
+                top: 0;
             }
         }
     }
 
     &__header {
-        
         grid-area: header;
         display: flex;
         justify-content: center;
@@ -131,7 +133,7 @@
         }
 
         max-width: rem(248);
-        height: rem(48);
+        height: auto; // Изменено на auto
         display: flex;
         justify-content: center;
         align-items: center;
@@ -198,7 +200,9 @@
 
         &-inner {
             display: flex;
-            overflow: hidden;
+            padding-bottom: 210px;
+            overflow-x: hidden;
+            overflow-y: visible;
             @include mobile-above {
                 display: block;
             }          
@@ -214,7 +218,7 @@
 
         @include mobile {
             max-width: rem(300);
-            overflow: hidden;
+            overflow: visible; // Изменено на visible
         }
 
         &-row-first {
@@ -242,25 +246,5 @@
                 display: contents;
             }
         }
-
-        // &-inner {
-        //     display: flex;
-        //     flex-wrap: wrap; 
-        //     overflow: hidden; 
-        //     width: 1272px;
-
-        //     @include laptop {
-        //         width: rem(774);
-        //     }
-
-        //     @include tablet-above {
-        //         column-gap: rem(10);
-        //         row-gap: rem(20);
-        //     }
-    
-        //     @include laptop-above {
-        //         gap: rem(20);
-        //     }
-        // }
     }
 }

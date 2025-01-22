@@ -3,6 +3,7 @@
 .career {
     &__inner {
         padding-block: rem(40);
+        padding-top: 0;
         display: flex;
         justify-content: space-between;
         column-gap: rem(80);

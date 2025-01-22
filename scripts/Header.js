@@ -39,9 +39,9 @@ export default class Header {
 
     bindEvents() {
         this.burgerButtonElement.addEventListener('click', this.onBurgerButtonClick);
-
         this.menuLinkElement.forEach((link) => link.addEventListener('click', this.closeMenu));
         this.contactLinkElement.addEventListener('click', this.closeMenu);
+        window.addEventListener('scroll', this.closeMenu);
     }
 
 }

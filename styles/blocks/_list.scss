@@ -1,8 +1,9 @@
 @use "../helpers" as * ;
 
 .list {
-    display: flex;
     width: 100%;
+    height: auto;
+    display: flex;
     flex-direction: column;
     align-items: center;
     &__row {
@@ -22,6 +23,9 @@
         &--first {
             margin-bottom: rem(20);
         }
+        &--second {
+
+        }
     }
 
     @include mobile {
@@ -30,13 +34,13 @@
     }
 
     &__item {
+        position: relative;
+        display: flex;
         width: 100%;
         max-width: rem(303);
         height: rem(240);
-        display: flex;
         flex-direction: column;
         flex: 0 0 auto;
-        border: #{rem(1)} solid rgba(255, 255, 255, 0.05);
 
         @include laptop {
             width: rem(244);
@@ -50,15 +54,37 @@
             width: rem(300);
         }
 
+        @include hover {
+
+            .list__item-image-wrapper {
+                display: none;
+            }
+
+            .focus-info {
+                display: block;
+            }
+
+            .list__item-inner {
+                height: auto;
+                position: absolute;
+                z-index: 10;
+            }
+        }
+        &-inner {
+            height: rem(240);
+            flex: 0 0 auto;
+            border: #{rem(1)} solid rgba(255, 255, 255, 0.05);
+            background-color: var(--color-dark-blue);
+        }
+
+
         &-label-wrapper {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
             row-gap: rem(4);
 
-            &:not(:has(:nth-child(3))) {
-                margin-bottom: rem(58);
-            }
+
         }
 
         &-label {

@@ -1,0 +1,32 @@
+@use "../helpers" as * ;
+
+.focus-info {
+    position: relative;
+    z-index: 10;
+    display: none;
+    padding: rem(40);
+    padding-bottom: rem(20);
+    padding-top: 0;
+    background-color: var(--color-dark-blue);
+    @include hover {
+        height: auto;
+        display: block;
+    }
+
+    &__description {
+        font-weight: 400;
+        font-size: rem(16);
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: rem(20)
+    }
+
+    &__list {
+        font-weight: 400;
+        font-size: rem(15);
+        color: rgba(255, 255, 255, 0.5);
+
+        &-item {
+            list-style-type:disc;
+        }
+    }
+}
