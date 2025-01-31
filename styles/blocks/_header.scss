@@ -2,7 +2,7 @@
 
 .header {
     &__body {
-        padding-block: rem(60);
+        padding-block: rem(30);
 
         @include mobile-s {
             padding-block: rem(30);

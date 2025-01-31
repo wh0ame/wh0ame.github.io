@@ -200,7 +200,7 @@
 
         &-inner {
             display: flex;
-            padding-bottom: 210px;
+            padding-bottom: rem(220);
             overflow-x: hidden;
             overflow-y: visible;
             @include mobile-above {

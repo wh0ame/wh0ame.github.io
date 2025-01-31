@@ -29,13 +29,14 @@
                     display: none;
                 }
             }
+        }
 
-            @include tablet {
-                &:nth-child(2) {
-                    display: none;
-                }
+        &-item-link {
+            display: block;
+
+            @include hover {
+                color: inherit;
             }
-
         }
 
         &-item-content  {

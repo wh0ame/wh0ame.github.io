@@ -997,7 +997,7 @@ a[class] {
 }
 .tabs__body-inner {
   display: flex;
-  padding-bottom: 210px;
+  padding-bottom: 13.75rem;
   overflow-x: hidden;
   overflow-y: visible;
 }
@@ -1326,9 +1326,17 @@ a[class] {
     display: none;
   }
 }
-@media (width <= 64.06125rem) {
-  .blog__list-item:nth-child(2) {
-    display: none;
+.blog__list-item-link {
+  display: block;
+}
+@media (any-hover: hover) {
+  .blog__list-item-link:hover {
+    color: inherit;
+  }
+}
+@media (any-hover: none) {
+  .blog__list-item-link:active {
+    color: inherit;
   }
 }
 .blog__list-item-content {
@@ -1595,12 +1603,94 @@ a[class] {
   margin-bottom: 1.25rem;
 }
 .focus-info__list {
+  padding-left: 1.5625rem;
   font-weight: 400;
   font-size: 0.9375rem;
   color: rgba(255, 255, 255, 0.5);
 }
 .focus-info__list-item {
   list-style-type: disc;
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.certificates__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  overflow-y: auto;
+}
+.certificates__modal.is-open {
+  display: flex;
+}
+.certificates__carousel {
+  position: relative;
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+.certificates__slides {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+.certificates__slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.certificates__slide.is-active {
+  opacity: 1;
+  position: relative;
+}
+.certificates__slide img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.certificates__arrow {
+  z-index: 10;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0.625rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.certificates__arrow--prev {
+  left: 0.625rem;
+}
+.certificates__arrow--next {
+  right: 0.625rem;
+}
+.certificates__close-button {
+  position: absolute;
+  top: 0.625rem;
+  right: 0.625rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

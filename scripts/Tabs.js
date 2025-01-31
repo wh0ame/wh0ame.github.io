@@ -19,15 +19,9 @@ class Tabs {
 
   constructor(rootElement) {
     this.rootElement = rootElement;
-    this.buttonElements = this.rootElement.querySelectorAll(
-      this.selectors.button
-    );
-    this.contentElements = this.rootElement.querySelectorAll(
-      this.selectors.content
-    );
-    this.arrowElements = this.rootElement.querySelectorAll(
-      this.selectors.arrow
-    );
+    this.buttonElements = this.rootElement.querySelectorAll(this.selectors.button);
+    this.contentElements = this.rootElement.querySelectorAll(this.selectors.content);
+    this.arrowElements = this.rootElement.querySelectorAll(this.selectors.arrow);
     this.arrowLeft = this.arrowElements[0];
     this.arrowRight = this.arrowElements[1];
     this.state = {
@@ -59,10 +53,10 @@ class Tabs {
     const tabsInner = this.rootElement.querySelector(tabsSelectorInner);
     const tabsInnerWidth = tabsInner.offsetWidth;
 
-    if (
-      event.target === this.arrowRight ||
-      event.target.closest(".tabs__arrow--right")
-    ) {
+    if (event.target === this.arrowRight || event.target.closest(".tabs__arrow--right")) {
+
+      tabsInner.scrollBy({ left: 570 });
+
       if (tabsInnerWidth === 520) {
         tabsInner.scrollBy({ left: 270 });
         return;
@@ -74,10 +68,10 @@ class Tabs {
 
       tabsInner.scrollBy({ left: 300 });
     }
-    if (
-      event.target === this.arrowLeft ||
-      event.target.closest(".tabs__arrow--left")
-    ) {
+    if (event.target === this.arrowLeft || event.target.closest(".tabs__arrow--left")) {
+
+      tabsInner.scrollBy({ left: -570 });
+
       if (tabsInnerWidth === 520) {
         tabsInner.scrollBy({ left: -270 });
         return;
@@ -98,24 +92,15 @@ class Tabs {
       const isActive = index === activeTabIndex;
 
       buttonElement.classList.toggle(this.stateClasses.isActive, isActive);
-      buttonElement.setAttribute(
-        this.stateAttributes.ariaSelected,
-        isActive.toString()
-      );
-      buttonElement.setAttribute(
-        this.stateAttributes.tabIndex,
-        isActive ? "0" : "-1"
-      );
+      buttonElement.setAttribute(this.stateAttributes.ariaSelected, isActive.toString());
+      buttonElement.setAttribute(this.stateAttributes.tabIndex, isActive ? "0" : "-1");
     });
 
     this.contentElements.forEach((contentElement, index) => {
       const id = contentElement.id;
       if (id === `tabpanel-${activeTabIndex + 1}`) {
         contentElement.classList.add(this.stateClasses.isActive);
-      } else if (
-        (activeTabIndex === 3 && id === "tabpanel-4") ||
-        (activeTabIndex === 3 && index === 7)
-      ) {
+      } else if ((activeTabIndex === 3 && id === "tabpanel-4") || (activeTabIndex === 3 && index === 7)) {
         contentElement.classList.add(this.stateClasses.isActive);
       } else {
         contentElement.classList.remove(this.stateClasses.isActive);
