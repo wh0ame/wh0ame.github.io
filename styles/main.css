@@ -457,7 +457,7 @@ a[class] {
 }
 @media (width <= 20.06125rem) {
   .header__body {
-    padding-block: 1.875rem;
+    padding-block: 1.5625rem;
   }
 }
 .header__body-inner {
@@ -609,12 +609,14 @@ a[class] {
 }
 @media (any-hover: hover) {
   .footer__arrow-link:hover svg path {
-    stroke-opacity: 0.5;
+    stroke-opacity: 0.8;
+    stroke: var(--color-light);
   }
 }
 @media (any-hover: none) {
   .footer__arrow-link:active svg path {
-    stroke-opacity: 0.5;
+    stroke-opacity: 0.8;
+    stroke: var(--color-light);
   }
 }
 .footer__arrow-link::after {
@@ -769,12 +771,14 @@ a[class] {
 }
 @media (any-hover: hover) {
   .hero__arrow:hover svg path {
-    stroke-opacity: 0.5;
+    stroke-opacity: 0.8;
+    stroke: var(--color-light);
   }
 }
 @media (any-hover: none) {
   .hero__arrow:active svg path {
-    stroke-opacity: 0.5;
+    stroke-opacity: 0.8;
+    stroke: var(--color-light);
   }
 }
 .hero__arrow::after {
@@ -832,13 +836,13 @@ a[class] {
 @media (any-hover: hover) {
   .tabs__arrow:hover svg > path {
     transition-duration: var(--transition-duration);
-    stroke-opacity: 50%;
+    stroke-opacity: 0.8;
   }
 }
 @media (any-hover: none) {
   .tabs__arrow:active svg > path {
     transition-duration: var(--transition-duration);
-    stroke-opacity: 50%;
+    stroke-opacity: 0.8;
   }
 }
 .tabs__arrow--left {
@@ -1675,6 +1679,18 @@ body.modal-open {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+}
+@media (any-hover: hover) {
+  .certificates__arrow:hover svg > path {
+    transition-duration: var(--transition-duration);
+    stroke-opacity: 0.8;
+  }
+}
+@media (any-hover: none) {
+  .certificates__arrow:active svg > path {
+    transition-duration: var(--transition-duration);
+    stroke-opacity: 0.8;
+  }
 }
 .certificates__arrow--prev {
   left: 0.625rem;

@@ -19,8 +19,8 @@
 
         @include hover {
             svg path {
-                 // Изменяем цвет обводки на primary
-                stroke-opacity: 0.5; // Убираем прозрачность
+                stroke-opacity: 0.8;
+                stroke: var(--color-light);
             }
         }
         position: relative;

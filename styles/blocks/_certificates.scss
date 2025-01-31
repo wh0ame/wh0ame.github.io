@@ -74,6 +74,13 @@ body {
     top: 50%;
     transform: translateY(-50%);
 
+    @include hover {
+      svg > path {
+        transition-duration: var(--transition-duration);
+        stroke-opacity: 0.8;
+      }
+    }
+
     &--prev {
       left: rem(10);
     }

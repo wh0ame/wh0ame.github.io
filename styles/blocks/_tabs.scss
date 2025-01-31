@@ -43,7 +43,7 @@
         @include hover {
             svg > path {
                 transition-duration: var(--transition-duration);
-                stroke-opacity: 50%;
+                stroke-opacity: 0.8;
             }
         }
 

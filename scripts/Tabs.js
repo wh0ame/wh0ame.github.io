@@ -55,8 +55,10 @@ class Tabs {
 
     if (event.target === this.arrowRight || event.target.closest(".tabs__arrow--right")) {
 
-      tabsInner.scrollBy({ left: 570 });
-
+      if ( tabsInnerWidth === 1272 || tabsInnerWidth === 774) {
+        tabsInner.scrollBy({ left: 570 });
+        return
+      }
       if (tabsInnerWidth === 520) {
         tabsInner.scrollBy({ left: 270 });
         return;
@@ -70,7 +72,10 @@ class Tabs {
     }
     if (event.target === this.arrowLeft || event.target.closest(".tabs__arrow--left")) {
 
-      tabsInner.scrollBy({ left: -570 });
+      if ( tabsInnerWidth === 1272 || tabsInnerWidth === 774) {
+        tabsInner.scrollBy({ left: -570 });
+        return
+      }
 
       if (tabsInnerWidth === 520) {
         tabsInner.scrollBy({ left: -270 });
