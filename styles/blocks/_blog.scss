@@ -12,11 +12,13 @@
 
     &__list {
         display: flex;
+        flex-direction: column;
+        align-items: center;
         gap: rem(30);
 
-        @media (max-width:rem(570)) { 
-            flex-direction: column;
-            align-items: center;
+        @media (min-width:rem(735)) { 
+            flex-direction: row;
+            align-items:stretch;
         }
 
 
