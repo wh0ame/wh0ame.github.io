@@ -1117,6 +1117,7 @@ a[class] {
     height: auto;
     position: absolute;
     z-index: 10;
+    cursor: pointer;
   }
 }
 @media (any-hover: none) {
