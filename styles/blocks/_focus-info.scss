@@ -1,33 +1,34 @@
-@use "../helpers" as * ;
+@use "../helpers" as *;
 
 .focus-info {
-    position: relative;
-    z-index: 10;
-    display: none;
-    padding: rem(40);
-    padding-bottom: rem(20);
-    padding-top: 0;
-    background-color: var(--color-dark-blue);
-    @include hover {
-        height: auto;
-        display: block;
-    }
+  position: absolute; // Чтобы не зависеть от родителя
+  top: 0;
+  opacity: 0;
+  z-index: 9999;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  padding: 20px;
+  padding-top: 0;
+  padding-bottom: 20px;
+  border: #{rem(1)} solid rgba(255, 255, 255, 0.05);
+  border-top: none;
+  background-color: var(--color-dark-blue);
 
-    &__description {
-        font-weight: 400;
-        font-size: rem(16);
-        color: rgba(255, 255, 255, 0.8);
-        margin-bottom: rem(20)
-    }
+  &__description {
+    font-weight: 400;
+    font-size: rem(16);
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: rem(20);
+  }
 
-    &__list {
-        padding-left: rem(25);
-        font-weight: 400;
-        font-size: rem(15);
-        color: rgba(255, 255, 255, 0.5);
+  &__list {
+    padding-left: rem(25);
+    font-weight: 400;
+    font-size: rem(15);
+    color: rgba(255, 255, 255, 0.5);
 
-        &-item {
-            list-style-type:disc;
-        }
+    &-item {
+      list-style-type: disc;
     }
+  }
 }
