@@ -1,13 +1,16 @@
 @use "../helpers" as * ;
 
 .background {
+    min-height: 658px;
     position: relative;
+    
+    @include mobile-above {
+        min-height: 994px;
+    }
 
     &__inner {
-        min-height: 100vh;
         position: relative;
         overflow: hidden;
-        
     }
 
     &__video {
@@ -36,7 +39,7 @@
     &--gradient-top {
         &::before {
             width: 100%;
-            height: 200px;
+            height:400px;
             display: block;
             content: "";
             top: -1px;

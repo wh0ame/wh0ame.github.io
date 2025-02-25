@@ -553,10 +553,15 @@ a[class] {
 }
 
 .background {
+  min-height: 658px;
   position: relative;
 }
+@media (width > 768px) {
+  .background {
+    min-height: 994px;
+  }
+}
 .background__inner {
-  min-height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -581,7 +586,7 @@ a[class] {
 }
 .background--gradient-top::before {
   width: 100%;
-  height: 200px;
+  height: 400px;
   display: block;
   content: "";
   top: -1px;
@@ -1088,6 +1093,12 @@ a[class] {
   height: 15rem;
   flex-direction: column;
   flex: 0 0 auto;
+  cursor: pointer;
+}
+.list__item.is-active .focus-info {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 @media (width <= 1440px) {
   .list__item {
@@ -1313,6 +1324,7 @@ a[class] {
 @media (min-width: 735px) {
   .blog__list {
     flex-direction: row;
+    justify-content: center;
     align-items: stretch;
   }
 }
@@ -1505,6 +1517,7 @@ a[class] {
 @media (width <= 1024px) {
   .contacts__divider {
     flex-direction: row;
+    justify-content: center;
     max-width: 100%;
     height: 7.5rem;
   }
@@ -1550,7 +1563,8 @@ a[class] {
 
 .feedback-form {
   z-index: 1;
-  background: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255, 255, 255, 0.01); /* Полупрозрачный фон */
+  backdrop-filter: blur(5px); /* Эффект размытия */
   padding: 3.125rem;
   width: 100%;
   max-width: 38.75rem;

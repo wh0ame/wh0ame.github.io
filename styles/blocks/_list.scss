@@ -37,6 +37,16 @@
     height: rem(240);
     flex-direction: column;
     flex: 0 0 auto;
+    cursor: pointer;
+
+
+    &.is-active {
+        .focus-info {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
+      }
 
     @include laptop {
       width: 243px;
