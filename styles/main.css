@@ -591,7 +591,7 @@ a[class] {
   content: "";
   top: -1px;
   position: absolute;
-  background: linear-gradient(360deg, rgba(10, 22, 35, 0) 0%, #0a1623 100%);
+  background: linear-gradient(360deg, rgba(10, 22, 35, 0) 0%, #0a1623 95%);
   z-index: 1;
 }
 
