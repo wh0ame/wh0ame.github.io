@@ -750,7 +750,7 @@ a[class] {
   height: 3.5rem !important;
 }
 .hero__line-second {
-  height: 14.3125rem !important;
+  height: 9.6875rem !important;
 }
 .hero__line-third {
   height: 3.5rem !important;
@@ -1276,8 +1276,18 @@ a[class] {
     height: 0.0625rem;
   }
 }
+@media (width <= 768px) {
+  .career__line--first {
+    display: none;
+  }
+}
 .career__circle {
   flex-shrink: 0;
+}
+@media (width <= 768px) {
+  .career__circle {
+    display: none;
+  }
 }
 
 .bordered-flex {
