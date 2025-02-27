@@ -39,14 +39,13 @@
     flex: 0 0 auto;
     cursor: pointer;
 
-
     &.is-active {
-        .focus-info {
-          opacity: 1;
-          visibility: visible;
-          transform: translateY(0);
-        }
+      .focus-info {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
       }
+    }
 
     @include laptop {
       width: 243px;
@@ -60,15 +59,18 @@
       width: rem(300);
     }
 
-    @include hover {
-      .list__item-image-wrapper {
-        display: none;
-      }
 
-      .focus-info {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+    @media (hover: hover) {
+      &:hover {
+        .list__item-image-wrapper {
+          display: none;
+        }
+
+        .focus-info {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
+        }
       }
     }
 

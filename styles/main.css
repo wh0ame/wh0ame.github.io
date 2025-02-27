@@ -1115,21 +1115,11 @@ a[class] {
     width: 18.75rem;
   }
 }
-@media (any-hover: hover) {
+@media (hover: hover) {
   .list__item:hover .list__item-image-wrapper {
     display: none;
   }
   .list__item:hover .focus-info {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
-}
-@media (any-hover: none) {
-  .list__item:active .list__item-image-wrapper {
-    display: none;
-  }
-  .list__item:active .focus-info {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
