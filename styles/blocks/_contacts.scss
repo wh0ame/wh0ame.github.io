@@ -43,5 +43,18 @@
 
     &__arrow-left, &__arrow-right  {
         @include square(rem(64));
+        position: relative;
+    }
+
+    &__arrow-left {
+        @include tablet {
+            left: 13px;
+        }
+    }
+
+    &__arrow-right {
+        @include tablet {
+            left: -14px;
+        }
     }
 }

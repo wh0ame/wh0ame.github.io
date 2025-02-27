@@ -17,6 +17,10 @@
         max-width: 100%;
     }
 
+    @include mobile {
+        padding-inline: rem(18);
+    }
+
     &__title {
         color: var(--color-light);
         margin-bottom: rem(15);

@@ -4,8 +4,8 @@
     &__body {
         padding-block: rem(60);
 
-        @include mobile-s {
-            padding-block: rem(25);
+        @include mobile {
+            padding-block: rem(30);
         }
 
         &-inner {
