@@ -2,14 +2,8 @@
 
 .tabs {
 
-    &.container {
-        @include mobile {
-            padding-inline: 0;
-        }
-    }
-
     &__inner {
-        padding-block: rem(100);
+        padding-block: 100px;
         padding-bottom: 0;
         display: grid;
         grid-template-columns: auto rem(1272) auto;
@@ -217,7 +211,6 @@
 
         @include mobile {
             max-width: rem(300);
-            overflow: visible; // Изменено на visible
         }
 
         &-row-first {

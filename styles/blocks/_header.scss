@@ -1,112 +1,108 @@
-@use "../helpers" as * ;
+@use "../helpers" as *;
 
 .header {
-    &__body {
-        padding-block: rem(60);
+  &__body {
+    padding-block: rem(60);
 
-        @include mobile {
-            padding-block: rem(30);
-        }
-
-        &-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            column-gap: rem(20);
-        }
+    @include mobile {
+      padding-block: rem(30);
     }
 
-    &__overlay {
-
-        @include tablet-above {
-            display: contents;
-        }
-
-        @include tablet {
-            position: fixed;
-            top: rem(120);
-            right: 17%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            row-gap: rem(20);
-            padding: rem(30);
-            background: rgba(18, 19, 18, 0.9);
-            transition-duration: var(--transition-duration);
-
-            &:not(.is-active) {
-                @include hide;
-            }
-        }
-
-        @include mobile {
-            right: 1%;
-        }
+    &-inner {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      column-gap: rem(20);
     }
-    
-    &__menu {
-        margin-left: auto;
+  }
 
-        &-list {
-            display: flex;
-            column-gap: rem(40);
-
-            @include tablet {
-                flex-direction: column;
-                row-gap: rem(20);
-
-            }
-        }
-
-        &-item {
-
-            &:first-child {
-                display: none;
-            }
-
-            @include tablet {
-                &:first-child {
-                    display: inline-flex;
-                }
-
-                &:nth-child(2){
-                    display: none;
-                }
-            }
-        }
-
-        &-link {
-            padding-block: rem(13);
-            font-size: rem(18);
-            font-weight: 600;
-
-            @include tablet {
-                padding-block: 0;
-            }
-
-            @include hover {
-                .icon {
-                    path {
-                        stroke: var(--color-primary);
-                    }
-                }
-
-            }
-        }
-
+  &__overlay {
+    @include laptop-above {
+      display: contents;
     }
 
-    &__contact-us-link {
-        max-width: rem(152);
-        margin-left: rem(20);
-        justify-content: flex-start;
+    @include laptop {
+      position: absolute;
+      top: 60px;
+      right: 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: rem(20);
+      padding: rem(30);
+      background: rgba(18, 19, 18, 0.9);
+      transition-duration: var(--transition-duration);
 
-        @include tablet {
-            margin-left: 0;
-            border: none;
-            color: var(--color-light);
-            align-self: flex-end;
-            padding: 0;
-        }
+      &:not(.is-active) {
+        @include hide;
+      }
     }
+
+    @include mobile {
+      right: 1%;
+    }
+  }
+
+  &__menu {
+    margin-left: auto;
+
+    &-list {
+      display: flex;
+      column-gap: rem(40);
+
+      @include laptop {
+        flex-direction: column;
+        row-gap: rem(20);
+      }
+    }
+
+    &-item {
+      &:first-child {
+        display: none;
+      }
+
+      @include laptop {
+        &:first-child {
+          display: inline-flex;
+        }
+
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+
+    &-link {
+      padding-block: rem(13);
+      font-size: rem(18);
+      font-weight: 600;
+
+      @include laptop {
+        padding-block: 0;
+      }
+
+      @include hover {
+        .icon {
+          path {
+            stroke: var(--color-primary);
+          }
+        }
+      }
+    }
+  }
+
+  &__contact-us-link {
+    max-width: rem(152);
+    margin-left: rem(20);
+    justify-content: flex-start;
+
+    @include laptop {
+      margin-left: 0;
+      border: none;
+      color: var(--color-light);
+      align-self: flex-end;
+      padding: 0;
+    }
+  }
 }

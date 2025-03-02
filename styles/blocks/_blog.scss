@@ -2,11 +2,11 @@
 
 .blog {
   &__inner {
-    padding-top: rem(80);
-    padding-bottom: rem(140);
+    padding-top: 80px;
+    padding-bottom: 140px;
 
     @include mobile {
-      padding-bottom: rem(80);
+      padding-bottom: 80px;
     }
   }
 
