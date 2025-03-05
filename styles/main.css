@@ -440,7 +440,7 @@ a[class] {
   background-repeat: no-repeat;
 }
 .icon--home::after {
-  background-image: url("../../icons/home.svg");
+  background-image: url("../icons/home.svg");
   width: 26px;
   height: 26px;
 }
@@ -451,10 +451,10 @@ a[class] {
   background-image: url("../icons/telegram.svg");
 }
 .icon--left {
-  background-image: url("../../icons/arrow-left.svg");
+  background-image: url("../icons/arrow-left.svg");
 }
 .icon--right {
-  background-image: url("../../icons/arrow-right.svg");
+  background-image: url("../icons/arrow-right.svg");
 }
 
 .header__body {
@@ -662,7 +662,7 @@ a[class] {
   width: 1.25rem;
   height: 1.25rem;
   border-radius: 50%;
-  border: 0.125rem solid rgba(255, 255, 255, 0.25);
+  border: 0.125rem solid rgba(255, 255, 255, 0.05);
 }
 
 .hero__inner {

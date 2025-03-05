@@ -18,7 +18,7 @@
 
   &--home {
     &::after {
-      background-image: url("../../icons/home.svg");
+      background-image: url("../icons/home.svg");
       width: 26px;
       height: 26px;
     }
@@ -33,10 +33,10 @@
   }
 
   &--left {
-    background-image: url("../../icons/arrow-left.svg");
+    background-image: url("../icons/arrow-left.svg");
   }
 
   &--right {
-    background-image: url("../../icons/arrow-right.svg");
+    background-image: url("../icons/arrow-right.svg");
   }
 }
