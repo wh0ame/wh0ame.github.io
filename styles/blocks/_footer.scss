@@ -34,7 +34,7 @@
     }
 
     &__logo {
-        @include fluid-text(32, 32);
+        font-size: 32px;
         font-weight: 700;
         text-align: center;
         text-transform: uppercase;

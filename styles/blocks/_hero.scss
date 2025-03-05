@@ -52,8 +52,12 @@
     }
 
     &__title {
+        @include laptop {
+            font-size: 48px;
+        }
+
         @include tablet {
-            font-size: rem(32);
+            font-size: 32px;
         }
     }
 
@@ -80,7 +84,7 @@
     }
 
     &__description {
-        font-size: rem(24);
+        font-size: 24px;
         font-weight: 400;
         color: var(--color-light);
     }

@@ -1,7 +1,7 @@
 @use "../helpers" as * ;
 
 .logo {
-    @include fluid-text(32, 20);
+    font-size: 32px;
 
     width: 100%;
     max-width: fluid(345, 150);

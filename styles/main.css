@@ -328,17 +328,17 @@ h6, .h6 {
 }
 
 h1, .h1 {
-  font-size: clamp(1.875rem, 1.5rem + 1.875vw, 4.75rem);
+  font-size: 60px;
   font-weight: 700;
 }
 
 h2, .h2 {
-  font-size: clamp(1.875rem, 1.85rem + 0.125vw, 3rem);
+  font-size: 32px;
   font-weight: 600;
 }
 
 h3, .h3 {
-  font-size: clamp(1.125rem, 1.125rem + 0vw, 2.125rem);
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -373,13 +373,13 @@ a[class] {
 }
 
 :focus-visible {
-  outline: 0.125rem dashed var(--color-primary);
+  outline: 0.125rem solid rgba(255, 255, 255, 0.2);
   outline-offset: 0.25rem;
   transition-duration: 0s !important;
 }
 
 .logo {
-  font-size: clamp(1.25rem, 1.1rem + 0.75vw, 3rem);
+  font-size: 32px;
   width: 100%;
   max-width: clamp(9.375rem, 6.9375rem + 12.1875vw, 22.5625rem);
   font-weight: 700;
@@ -392,7 +392,7 @@ a[class] {
   justify-content: center;
   align-items: center;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 18px;
   border: var(--border-button);
   background-color: transparent;
   padding: 0.9375rem 1.875rem;
@@ -445,10 +445,10 @@ a[class] {
   height: 26px;
 }
 .icon--white-whatsapp {
-  background-image: url("../../icons/whatsapp.svg");
+  background-image: url("../icons/whatsapp.svg");
 }
 .icon--white-telegram {
-  background-image: url("../../icons/telegram.svg");
+  background-image: url("../icons/telegram.svg");
 }
 .icon--left {
   background-image: url("../../icons/arrow-left.svg");
@@ -526,7 +526,7 @@ a[class] {
 }
 .header__menu-link {
   padding-block: 0.8125rem;
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 600;
 }
 @media (width <= 1439px) {
@@ -565,7 +565,7 @@ a[class] {
 }
 @media (width > 767px) {
   .background {
-    min-height: 994px;
+    min-height: 900px;
   }
 }
 .background__inner {
@@ -640,7 +640,7 @@ a[class] {
   content: "";
 }
 .footer__logo {
-  font-size: clamp(2rem, 2rem + 0vw, 3rem);
+  font-size: 32px;
   font-weight: 700;
   text-align: center;
   text-transform: uppercase;
@@ -713,9 +713,14 @@ a[class] {
     padding-bottom: 0;
   }
 }
+@media (width <= 1439px) {
+  .hero__title {
+    font-size: 48px;
+  }
+}
 @media (width <= 1023px) {
   .hero__title {
-    font-size: 2rem;
+    font-size: 32px;
   }
 }
 .hero__web-development {
@@ -743,7 +748,7 @@ a[class] {
   }
 }
 .hero__description {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 400;
   color: var(--color-light);
 }
@@ -803,7 +808,7 @@ a[class] {
 }
 
 .tabs__inner {
-  padding-block: 100px;
+  padding-block: 140px;
   padding-bottom: 0;
   display: grid;
   grid-template-columns: auto 79.5rem auto;
@@ -922,7 +927,7 @@ a[class] {
   padding-block: 0.625rem;
   padding-inline: 0.9375rem;
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.75;
   color: var(--color-gray);
   background-color: transparent;
@@ -984,7 +989,7 @@ a[class] {
   align-items: center;
   height: 1.375rem;
   font-weight: 600;
-  font-size: 0.75rem;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.8);
   padding-block: 0.25rem;
   padding-inline: 0.625rem;
@@ -1140,7 +1145,7 @@ a[class] {
   row-gap: 0.25rem;
 }
 .list__item-label {
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
   padding-block: 0.25rem;
   padding-inline: 0.625rem;
@@ -1204,7 +1209,7 @@ a[class] {
 }
 .metrics__key {
   font-weight: 400;
-  font-size: 2rem;
+  font-size: 32px;
   color: var(--color-light);
   padding-top: 0.875rem;
 }
@@ -1212,7 +1217,7 @@ a[class] {
   width: 100%;
   max-width: 8.125rem;
   font-weight: 700;
-  font-size: 3.75rem;
+  font-size: 60px;
   color: var(--color-light);
 }
 .metrics__sing {
@@ -1220,7 +1225,7 @@ a[class] {
 }
 .metrics__description {
   font-weight: 400;
-  font-size: 1.125rem;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.5);
 }
 
@@ -1379,12 +1384,15 @@ a[class] {
   color: var(--color-light);
 }
 .blog__list-item-title--link {
-  font-size: 1.25rem;
+  font-size: 20px;
   font-weight: 600;
 }
 .blog__list-item-description {
   margin-bottom: 0.75rem;
   line-height: 1.4;
+}
+.blog__button {
+  max-width: 123px;
 }
 
 .about-me__inner {
@@ -1403,7 +1411,7 @@ a[class] {
 .about-me__description {
   font-weight: 400;
   line-height: 1.55556;
-  font-size: 1.125rem;
+  font-size: 18px;
 }
 .about-me__image {
   height: 5rem;
@@ -1467,7 +1475,7 @@ a[class] {
 .contacts-card__link-name {
   width: 100%;
   max-width: 14.875rem;
-  font-size: 1.125rem;
+  font-size: 18px;
   text-align: center;
   color: var(--color-light);
   align-self: center;
@@ -1514,6 +1522,7 @@ a[class] {
   }
 }
 .contacts__divider {
+  z-index: 10;
   width: 100%;
   max-width: 6.25rem;
 }
@@ -1563,7 +1572,7 @@ a[class] {
 .field__control ::placeholder {
   color: var(--color-gray);
   font-weight: 400;
-  font-size: 0.875rem;
+  font-size: 14px;
 }
 .field textarea.field__control {
   resize: vertical;
@@ -1604,7 +1613,7 @@ a[class] {
   color: var(--color-primary);
 }
 .feedback-form__description {
-  font-size: 1.125rem;
+  font-size: 18px;
   line-height: 1.55556;
   margin-bottom: 3.125rem;
 }
@@ -1629,14 +1638,14 @@ a[class] {
 }
 .focus-info__description {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 16px;
   color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1.25rem;
 }
 .focus-info__list {
   padding-left: 1.5625rem;
   font-weight: 400;
-  font-size: 0.9375rem;
+  font-size: 15px;
   color: rgba(255, 255, 255, 0.5);
 }
 .focus-info__list-item {

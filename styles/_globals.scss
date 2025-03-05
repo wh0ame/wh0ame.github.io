@@ -29,19 +29,18 @@ h6, .h6 {
 }
 
 h1, .h1 {
-    @include fluid-text(60, 30);
+    font-size: 60px;
 
     font-weight: 700;
 }
 
 h2, .h2 {
-    @include fluid-text(32, 30);
-
+    font-size: 32px;
     font-weight: 600;
 }
 
 h3, .h3 {
-    @include fluid-text(18, 18);
+    font-size: 18px;
     font-weight: 400;
 }
 
@@ -73,7 +72,7 @@ a {
 }
 
 :focus-visible {
-    outline: rem(2) dashed var(--color-primary);
+    outline: rem(2) solid rgba(255, 255, 255, 0.2);
     outline-offset: rem(4);
     transition-duration: 0s !important;
 }
