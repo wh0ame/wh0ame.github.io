@@ -2,12 +2,16 @@
 
 .logo {
     font-size: 32px;
-
     width: 100%;
-    max-width: fluid(345, 150);
-
     font-weight: 700;
     text-transform: uppercase;
     color: var(--color-light);
 
+    @include mobile {
+        font-size: 23px;
+    }
+
+    @include mobile-s {
+        font-size: 20px;
+    }
 }

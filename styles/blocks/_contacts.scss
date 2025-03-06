@@ -4,7 +4,7 @@
     &__body {
         display: flex;
         gap: rem(40);
-
+        padding-top: 20px;
         @include tablet {
             flex-direction: column;
         }

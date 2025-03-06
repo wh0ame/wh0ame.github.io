@@ -29,6 +29,7 @@
             grid-template-areas: 
             'body body'
             'arrow-left arrow-right'; 
+            gap: 20px
         }
     }
 
@@ -198,7 +199,11 @@
             overflow: hidden;
             @include mobile-above {
                 display: block;
-            }          
+            }
+            
+            @include mobile {
+                padding-bottom: 0px;
+            }
         }
 
         @include laptop {

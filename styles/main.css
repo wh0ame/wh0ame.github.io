@@ -381,10 +381,19 @@ a[class] {
 .logo {
   font-size: 32px;
   width: 100%;
-  max-width: clamp(9.375rem, 6.9375rem + 12.1875vw, 22.5625rem);
   font-weight: 700;
   text-transform: uppercase;
   color: var(--color-light);
+}
+@media (width <= 767px) {
+  .logo {
+    font-size: 23px;
+  }
+}
+@media (width <= 320px) {
+  .logo {
+    font-size: 20px;
+  }
 }
 
 .button {
@@ -611,6 +620,11 @@ a[class] {
   padding-top: 100px;
   padding-bottom: 150px;
 }
+@media (width <= 767px) {
+  .footer__inner {
+    padding-bottom: 100px;
+  }
+}
 .footer__arrow-link {
   position: relative;
   color: rgba(255, 255, 255, 0.25);
@@ -709,7 +723,7 @@ a[class] {
 }
 @media (width <= 767px) {
   .hero__corporate-portals {
-    padding-top: 2.5rem;
+    padding-top: 30px;
     padding-bottom: 0;
   }
 }
@@ -721,6 +735,11 @@ a[class] {
 @media (width <= 1023px) {
   .hero__title {
     font-size: 32px;
+  }
+}
+@media (width <= 767px) {
+  .hero__title {
+    font-size: 30px;
   }
 }
 .hero__web-development {
@@ -833,6 +852,7 @@ a[class] {
     grid-template-columns: 9.375rem 9.375rem;
     grid-template-rows: 15rem auto;
     grid-template-areas: "body body" "arrow-left arrow-right";
+    gap: 20px;
   }
 }
 .tabs__arrow {
@@ -1018,6 +1038,11 @@ a[class] {
 @media (width > 767px) {
   .tabs__body-inner {
     display: block;
+  }
+}
+@media (width <= 767px) {
+  .tabs__body-inner {
+    padding-bottom: 0px;
   }
 }
 @media (width <= 1439px) {
@@ -1400,6 +1425,11 @@ a[class] {
   margin-bottom: 2.5rem;
   border: 2px dashed rgba(255, 255, 255, 0.1);
 }
+@media (width <= 767px) {
+  .about-me__inner {
+    padding-inline: 20px;
+  }
+}
 .about-me__title {
   font-size: clamp(1.875rem, 1.85rem + 0.125vw, 3rem);
   margin-bottom: 1.875rem;
@@ -1428,6 +1458,7 @@ a[class] {
 
 .contacts-card__link-wrapper {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1.875rem 2.5rem;
   border: 2px solid rgba(255, 255, 255, 0.1);
@@ -1459,6 +1490,7 @@ a[class] {
 @media (width <= 767px) {
   .contacts-card__col {
     flex-direction: column;
+    width: auto;
   }
 }
 .contacts-card__divider {
@@ -1470,7 +1502,12 @@ a[class] {
   }
 }
 .contacts-card__line {
-  height: 3.25rem;
+  height: 52px;
+}
+@media (width <= 767px) {
+  .contacts-card__line {
+    height: 104px;
+  }
 }
 .contacts-card__link-name {
   width: 100%;
@@ -1495,7 +1532,6 @@ a[class] {
 @media (width <= 1023px) {
   .contacts-card__link-name {
     text-align: left;
-    align-self: flex-start;
   }
 }
 .contacts-card__button {
@@ -1506,6 +1542,7 @@ a[class] {
 .contacts__body {
   display: flex;
   gap: 2.5rem;
+  padding-top: 20px;
 }
 @media (width <= 1023px) {
   .contacts__body {

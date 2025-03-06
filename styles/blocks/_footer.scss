@@ -10,6 +10,10 @@
         row-gap: rem(30);
         padding-top: 100px;
         padding-bottom: 150px;
+
+        @include mobile {
+            padding-bottom: 100px;
+        }
     }
 
     &__arrow-link {

@@ -46,7 +46,7 @@
         }
 
         @include mobile {
-            padding-top: rem(40);
+            padding-top: 30px;
             padding-bottom: 0;
         }
     }
@@ -58,6 +58,10 @@
 
         @include tablet {
             font-size: 32px;
+        }
+
+        @include mobile {
+            font-size: 30px;
         }
     }
 
