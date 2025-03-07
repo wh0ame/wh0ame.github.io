@@ -23,8 +23,12 @@
     }
 
     &-item {
-      max-width: rem(337);
       border: 1px solid rgba(255, 255, 255, 0.1);
+      width: auto;
+
+      @media (min-width: 430px) {
+        width: 329px;
+      }
 
       @include laptop {
         &:nth-child(2) {
@@ -36,6 +40,9 @@
         &:nth-child(3) {
           display: none;
         }
+      }
+
+      @include mobile {
       }
 
       @include mobile-s {
@@ -56,7 +63,6 @@
     &-item-content {
       padding: rem(20) rem(30) rem(40) rem(30);
       color: var(--color-gray);
-
 
       &--link {
         height: rem(420);
@@ -86,5 +92,9 @@
 
   &__button {
     max-width: 123px;
+  }
+
+  &__list-item-image {
+    width: 100%;
   }
 }

@@ -1361,8 +1361,13 @@ a[class] {
   }
 }
 .blog__list-item {
-  max-width: 21.0625rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  width: auto;
+}
+@media (min-width: 430px) {
+  .blog__list-item {
+    width: 329px;
+  }
 }
 @media (width <= 1439px) {
   .blog__list-item:nth-child(2) {
@@ -1418,6 +1423,9 @@ a[class] {
 }
 .blog__button {
   max-width: 123px;
+}
+.blog__list-item-image {
+  width: 100%;
 }
 
 .about-me__inner {
