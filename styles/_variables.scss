@@ -19,13 +19,14 @@
     --container-width: 942px;
   }
 
-//   @media (min-width: 735px) {
-//     --container-width: 668px;
-//   }
 
   @include mobile {
     --container-width: 100%;
-    --container-padding-x: #{rem(10)};
+    --container-padding-x: 10px;
+  }
+
+  @include mobile-above {
+    --container-padding-x: 40px; 
   }
 
   --transition-duration: 0.2s;

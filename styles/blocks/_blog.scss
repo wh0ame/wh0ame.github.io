@@ -24,10 +24,10 @@
 
     &-item {
       border: 1px solid rgba(255, 255, 255, 0.1);
-      width: auto;
+      width: 100%;
 
-      @media (min-width: 430px) {
-        width: 329px;
+      @include mobile-above {
+        max-width: 329px;
       }
 
       @include laptop {
@@ -40,9 +40,6 @@
         &:nth-child(3) {
           display: none;
         }
-      }
-
-      @include mobile {
       }
 
       @include mobile-s {

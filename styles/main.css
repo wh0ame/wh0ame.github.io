@@ -244,7 +244,12 @@ svg * {
 @media (width <= 767px) {
   :root {
     --container-width: 100%;
-    --container-padding-x: 0.625rem;
+    --container-padding-x: 10px;
+  }
+}
+@media (width > 767px) {
+  :root {
+    --container-padding-x: 40px;
   }
 }
 
@@ -1362,11 +1367,11 @@ a[class] {
 }
 .blog__list-item {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  width: auto;
+  width: 100%;
 }
-@media (min-width: 430px) {
+@media (width > 767px) {
   .blog__list-item {
-    width: 329px;
+    max-width: 329px;
   }
 }
 @media (width <= 1439px) {
