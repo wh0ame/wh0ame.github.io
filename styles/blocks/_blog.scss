@@ -26,10 +26,6 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
       width: 100%;
 
-      @include mobile-above {
-        max-width: 329px;
-      }
-
       @include laptop {
         &:nth-child(2) {
           display: none;
