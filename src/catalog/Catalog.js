@@ -169,35 +169,35 @@ function CreateModal({ room }) {
     setModalIsOpen(false);
   }
 
-  const descriptionJsx = room.description.map((desc, i) => {
-    return (<p key={i}>{desc}</p>);
-  })
+  const descriptionJsx = room.description.map((desc, i) => (
+    <p key={i}>{desc}</p>
+  ));
 
-  return(
+  return (
     <>
-    <div className='card' onClick={openModal}>
-      <img
-          className="card__img"
-          src={room.src}
-          alt="Пентхаус “Loft Олимп”"
-      />
-      <h3 className="card__title">{room.title}</h3>
-    </div>
-    {
-      modalIsOpen ?
-        <div className='w-full h-full bg-gradient-to-b from-gray-500 fixed flex justify-center items-center z-10 left-0 top-0' >
-          <div className='text-white text-center'>
-            <img
-              className="card__img"
-              src={room.src}
-              alt="Пентхаус “Loft Олимп”"
-            />
-            {descriptionJsx}
-            <button className='font-bold text-slate-400' onClick={closeModal}>Закрыть</button>
+      <div className="card" onClick={openModal}>
+        <img className="card__img" src={room.src} alt={room.title} />
+        <h3 className="card__title">{room.title}</h3>
+      </div>
+      {modalIsOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()} // Предотвращаем закрытие при клике внутри модального окна
+          >
+            <div className="modal-image">
+              <img src={room.src} alt={room.title} />
+            </div>
+            <div className="modal-text">
+              <h3>{room.title}</h3>
+              {descriptionJsx}
+              <button className="close-button" onClick={closeModal}>
+                Закрыть
+              </button>
+            </div>
           </div>
         </div>
-      : ''
-    }
+      )}
     </>
-  )
+  );
 }
