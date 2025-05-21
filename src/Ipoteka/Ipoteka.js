@@ -1,284 +1,198 @@
-import React, { useState } from "react";
-import IpotekaCode from "./IpotekaCode";
-import mouse from '../img/header/mouse.svg';
-import logo from '../img/logo.svg';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
 import './IpotekaStyle.css';
 import SmallHeader from "../layouts/SmallHeader";
 
-export default function Ipoteka(){
-    const [creditValue, setCreditValue] = useState(12000000)
-    const [vznosValue, setVznosValue] = useState(2500000)
-    const [srokValue, setSrokValue] = useState(10)
-    const [stavkaValue, setStavkaValue] = useState(3)
-    function creditInput(creditInput) {
-        setCreditValue(creditInput.target.value)
-        if (vznosValue > creditInput.target.value) {
-            setVznosValue(creditInput.target.value);
+export default function Ipoteka() {
+    const [creditValue, setCreditValue] = useState(12000000);
+    const [vznosValue, setVznosValue] = useState(2500000);
+    const [srokValue, setSrokValue] = useState(10);
+    const [stavkaValue, setStavkaValue] = useState(3.5);
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+
+    // Форматирование чисел
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat('ru-RU', {
+            style: 'currency',
+            currency: 'RUB',
+            maximumFractionDigits: 0
+        }).format(value);
+    };
+
+    // Расчет ипотеки
+    const calculateMortgage = () => {
+        const loanAmount = creditValue - vznosValue;
+        const monthlyRate = stavkaValue / 100 / 12;
+        const months = srokValue * 12;
+        
+        if (monthlyRate === 0) {
+            return {
+                monthlyPayment: loanAmount / months,
+                totalPayment: loanAmount,
+                overpayment: 0
+            };
         }
-    }
 
-    function vznosInput(vznosInput) {
-        setVznosValue(vznosInput.target.value)
-    }
+        const monthlyPayment = loanAmount * 
+            (monthlyRate * Math.pow(1 + monthlyRate, months)) / 
+            (Math.pow(1 + monthlyRate, months) - 1);
+        
+        const totalPayment = monthlyPayment * months;
+        const overpayment = totalPayment - loanAmount;
 
-    function srokInput(srokInput) {
-        setSrokValue(srokInput.target.value)
-    }
+        return {
+            monthlyPayment,
+            totalPayment,
+            overpayment
+        };
+    };
 
-    function stavkaInput(stavkaInput) {
-        setStavkaValue(stavkaInput.target.value)
-    }
+    const { monthlyPayment, totalPayment, overpayment } = calculateMortgage();
 
-    let StavkaIpotekaMonth = Math.round((creditValue - vznosValue) / stavkaValue / 12 / 100);
-    let IpotekaMonth = Math.round((creditValue - vznosValue) * StavkaIpotekaMonth * stavkaValue / ( stavkaValue - 1 ))
-    let Overprice = (IpotekaMonth * srokValue - (creditValue - vznosValue))
-    let AllSum = (Overprice + (creditValue - vznosValue) )
-    return(
+    // Обработчики изменения полей
+    const handleCreditChange = (e) => {
+        const value = parseInt(e.target.value);
+        setCreditValue(value);
+        if (vznosValue > value) {
+            setVznosValue(value);
+        }
+    };
+
+    const handleVznosChange = (e) => {
+        const value = parseInt(e.target.value);
+        setVznosValue(Math.min(value, creditValue));
+    };
+
+    const handleSrokChange = (e) => {
+        setSrokValue(parseInt(e.target.value));
+    };
+
+    const handleStavkaChange = (e) => {
+        setStavkaValue(parseFloat(e.target.value));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Здесь можно добавить логику отправки данных
+        alert('Заявка отправлена! Мы свяжемся с вами в ближайшее время.');
+    };
+
+    return (
         <>
             <SmallHeader />
-            <div className="Atribut">
-            <div className="container my-container font-sans">
-            <div className="card_ipoteka p-10">
-            <div className="card-header my-card-header">
-                <h5 className="card-title text-center mb-5 font-black underline">Калькулятор ипотечного кредитования</h5>
-            </div>
-            <div className="card-body">
-                <label htmlFor="creditText">Стоимость недвижимости:</label>
-                <input
-                    type="text"
-                    id="creditText"
-                    className="form-control"
-                    aria-describedby="creditNumberHolder"
-                    value={creditValue + " ₽"}
-                />
-                <input
-                    type="range"
-                    className="form-control-range"
-                    id="creditRange"
-                    min={0}
-                    max={15000000}
-                    value={creditValue}
-                    onInput={creditInput}
-                />
-                <small id="creditNumberHolder" className="form-text text-muted p-3">
-                Сумма, которую за вас заплатит банк.
-                </small>
-            </div>
-            <div className="card-body">
-                <label htmlFor="firstContributionText">Первоначальный взнос:</label>
-                <input
-                type="text"
-                id="firstContributionText"
-                className="form-control"
-                aria-describedby="firstContributionNumberHolder"
-                value={vznosValue + " ₽"}
-                />
-                <input
-                type="range"
-                className="form-control-range"
-                id="firstContributionRange"
-                min={0}
-                max={creditValue}
-                value={vznosValue}
-                onInput={vznosInput}
-                />
-                <small
-                id="firstContributionNumberHolder"
-                className="form-text text-muted p-3"
-                >
-                Ваш первичный взнос в качестве погашения кредита
-                </small>
-            </div>
-            <div className="card-body">
-                <label htmlFor="returnPeriodText">Срок кредита:</label>
-                <input
-                type="text"
-                id="returnPeriodText"
-                className="form-control"
-                aria-describedby="returnPeriodNumberHolder"
-                value={srokValue + "  лет"}
-                />
-                <input
-                type="range"
-                className="form-control-range"
-                id="returnPeriodRange"
-                min={10}
-                max={30}
-                value={srokValue}
-                onInput={srokInput}
-                />
-                <small id="returnPeriodNumberHolder" className="form-text text-muted p-3">
-                Как долго в годах планируете возвращать долг.
-                </small>
-            </div>
-            <div className="card-body">
-                <label htmlFor="percentNumber">Годовая процентная ставка:</label>
-                <input
-                type="text"
-                id="percentNumber"
-                className="form-control"
-                aria-describedby="percentNumberHolder"
-                value={stavkaValue + " 5 %"}
-                />
-                <input
-                type="range"
-                className="form-control-range"
-                min={5}
-                max={20}
-                value={stavkaValue}
-                onInput={stavkaInput}
-                step="0.01"
-                />
-                <small id="percentNumberHolder" className="form-text text-muted p-3">
-                Столько процентов начисляется на ваш долг в год.
-                </small>
-            </div>
-            <hr />
-            <div className="card-footer">
-                <p className="my-result">
-                <strong>Ежемесячная ставка:</strong> <span id="payment">
-                    {StavkaIpotekaMonth}  %
-                    </span> 
-                </p>
-                <p className="my-result">
-                <strong>Итого:</strong> <span id="payment">
-                    {IpotekaMonth}
-                    </span> ₽ в месяц
-                </p>
-                <small className="form-text text-muted">
-                Общая выплата: <span id="common">
-                    {AllSum} ₽
-                </span>
-                </small>
-                <small className="form-text text-muted">
-                Переплата: <span id="subpayment">
-                    {Overprice} ₽</span>
-                </small>
-            </div>
-            <p>
-                    <div className="container">
-                    <form className="feedback__form form p-5">
-                    <p className="form__privacy form__privacy--bottom">
-                        *Мы никому не передаем ваши данные. <br />И не сохраняем ваш номер в
-                        базу.
-                    </p>
-                    <input
-                        type="text"
-                        className="form__input"
-                        placeholder="Ваше имя"
-                        autoComplete="off"
-                    />
-                    <input
-                        data-tel-input=""
-                        type="text"
-                        className="form__input"
-                        placeholder="Ваш телефон"
-                        autoComplete="off"
-                    />
-                    <button type="submit" className="form__btn italic">
-                        Отправить заявку
-                    </button>
-                    </form>
-                    </div>
-                </p>
-            </div>
-            <canvas id="graph" width={400} height={250} />
-            </div>
-            </div>
-            
+            <div className="ipoteka-container">
+                <div className="ipoteka-card">
+                    <h1 className="ipoteka-title">Калькулятор ипотечного кредитования</h1>
+                    
+                    <div className="ipoteka-inputs">
+                        <div className="input-group">
+                            <label>Стоимость недвижимости</label>
+                            <div className="input-value">{formatCurrency(creditValue)}</div>
+                            <input
+                                type="range"
+                                min="1000000"
+                                max="50000000"
+                                step="100000"
+                                value={creditValue}
+                                onChange={handleCreditChange}
+                                className="ipoteka-slider"
+                            />
+                            <div className="input-description">Сумма, которую за вас заплатит банк</div>
+                        </div>
 
-            <footer className="footer">
-                <div className="container">
-                <div className="footer__grid">
-                    <div className="footer__logo">
-                    <a href="#!">
-                        <img src="./img/logo.svg" alt="Utopia Estates" />
-                    </a>
+                        <div className="input-group">
+                            <label>Первоначальный взнос</label>
+                            <div className="input-value">{formatCurrency(vznosValue)}</div>
+                            <input
+                                type="range"
+                                min="0"
+                                max={creditValue}
+                                step="100000"
+                                value={vznosValue}
+                                onChange={handleVznosChange}
+                                className="ipoteka-slider"
+                            />
+                            <div className="input-description">Ваш первичный взнос в качестве погашения кредита</div>
+                        </div>
+
+                        <div className="input-group">
+                            <label>Срок кредита</label>
+                            <div className="input-value">{srokValue} лет</div>
+                            <input
+                                type="range"
+                                min="1"
+                                max="30"
+                                step="1"
+                                value={srokValue}
+                                onChange={handleSrokChange}
+                                className="ipoteka-slider"
+                            />
+                            <div className="input-description">Как долго планируете возвращать долг</div>
+                        </div>
+
+                        <div className="input-group">
+                            <label>Годовая процентная ставка</label>
+                            <div className="input-value">{stavkaValue}%</div>
+                            <input
+                                type="range"
+                                min="1"
+                                max="20"
+                                step="0.1"
+                                value={stavkaValue}
+                                onChange={handleStavkaChange}
+                                className="ipoteka-slider"
+                            />
+                            <div className="input-description">Проценты, начисляемые на ваш долг в год</div>
+                        </div>
                     </div>
-                    <div className="footer__nav">
-                    <nav>
-                        <ul className="footer__nav-list">
-                        <li>
-                            <a href="#!">О комплексе</a>
-                        </li>
-                        <li>
-                            <a href="#!">Район</a>
-                        </li>
-                        <li>
-                            <a href="#!">Каталог квартир</a>
-                        </li>
-                        <li>
-                            <a href="#!">Ипотека</a>
-                        </li>
-                        <li>
-                            <a href="#!">Контакты</a>
-                        </li>
-                        </ul>
-                    </nav>
+
+                    <div className="ipoteka-results">
+                        <div className="result-item">
+                            <span className="result-label">Ежемесячный платеж:</span>
+                            <span className="result-value">{formatCurrency(monthlyPayment)}</span>
+                        </div>
+                        <div className="result-item">
+                            <span className="result-label">Общая выплата:</span>
+                            <span className="result-value">{formatCurrency(totalPayment)}</span>
+                        </div>
+                        <div className="result-item">
+                            <span className="result-label">Переплата:</span>
+                            <span className="result-value">{formatCurrency(overpayment)}</span>
+                        </div>
                     </div>
-                    <div className="footer__nav">
-                    <nav>
-                        <ul className="footer__nav-list">
-                        <li>
-                            <a href="#!">Поселение и переезд</a>
-                        </li>
-                        <li>
-                            <a href="#!">Сервисные услуги</a>
-                        </li>
-                        <li>
-                            <a href="#!">Экологическая устойчивость</a>
-                        </li>
-                        <li>
-                            <a href="#!">Инвестиционные возможности</a>
-                        </li>
-                        <li>
-                            <a href="#!">Программа лояльности</a>
-                        </li>
-                        </ul>
-                    </nav>
-                    </div>
-                    <div className="footer__address">
-                    <ul className="footer__nav-list">
-                        <li>Адрес: Наб. реки Фонтанки 10-15</li>
-                        <li>
-                        Телефон: <a href="tel:+78121234567">8 (812) 123-45-67</a>
-                        </li>
-                        <li>Отдел продаж: 10:00 - 20:00</li>
-                        <li>
-                        E-mail:{" "}
-                        <a className="link-bold" href="mailto:vip@lofthouse.ru">
-                            vip@lofthouse.ru
-                        </a>
-                        </li>
-                    </ul>
-                    <ul className="footer__socials">
-                        <li>
-                        <a href="#!">
-                            <img src="./img/socials/youtube.svg" alt="" />
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#!">
-                            <img src="./img/socials/vk.svg" alt="" />
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#!">
-                            <img src="./img/socials/facebook.svg" alt="" />
-                        </a>
-                        </li>
-                        <li>
-                        <a href="#!">
-                            <img src="./img/socials/instagram.svg" alt="" />
-                        </a>
-                        </li>
-                    </ul>
+
+                    <div className="ipoteka-form">
+                        <h2>Оформить заявку</h2>
+                        <form onSubmit={handleSubmit}>
+                            <div className="form-group">
+                                <input
+                                    type="text"
+                                    placeholder="Ваше имя"
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <div className="form-group">
+                                <input
+                                    type="tel"
+                                    placeholder="Ваш телефон"
+                                    value={phone}
+                                    onChange={(e) => setPhone(e.target.value)}
+                                    required
+                                />
+                            </div>
+                            <button type="submit" className="submit-btn">
+                                Отправить заявку
+                            </button>
+                        </form>
+                        <p className="disclaimer">
+                            *Мы никому не передаем ваши данные.<br />
+                            И не сохраняем ваш номер в базу.
+                        </p>
                     </div>
                 </div>
-                </div>
-            </footer>
+            </div>
         </>
-
-    )
+    );
 }
