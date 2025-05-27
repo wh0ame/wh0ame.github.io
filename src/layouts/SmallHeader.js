@@ -29,7 +29,7 @@ function SmallHeader() {
                 <nav className="nav">
                   <ul className="nav__list">
                     <li>
-                      <Link to="/header">О комплексе</Link>
+                      <Link to="/">О комплексе</Link>
                     </li>
                     <li>
                       <Link to="/catalog">Каталог квартир</Link>
