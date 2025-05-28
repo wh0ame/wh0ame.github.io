@@ -13,40 +13,19 @@ function Footer(){
               <nav>
                 <ul className="footer__nav-list">
                   <li>
-                    <a href="#!">О комплексе</a>
+                    <a href="/">О комплексе</a>
                   </li>
                   <li>
                     <a href="#!">Район</a>
                   </li>
                   <li>
-                    <a href="#!">Каталог квартир</a>
+                    <a href="/catalog">Каталог квартир</a>
                   </li>
                   <li>
-                    <a href="#!">Ипотека</a>
+                    <a href="/ipoteka">Ипотека</a>
                   </li>
                   <li>
-                    <a href="#!">Контакты</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div className="footer__nav">
-              <nav>
-                <ul className="footer__nav-list">
-                  <li>
-                    <a href="#!">Поселение и переезд</a>
-                  </li>
-                  <li>
-                    <a href="#!">Сервисные услуги</a>
-                  </li>
-                  <li>
-                    <a href="#!">Экологическая устойчивость</a>
-                  </li>
-                  <li>
-                    <a href="#!">Инвестиционные возможности</a>
-                  </li>
-                  <li>
-                    <a href="#!">Программа лояльности</a>
+                    <a href="/contacts">Контакты</a>
                   </li>
                 </ul>
               </nav>
