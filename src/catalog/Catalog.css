@@ -1,0 +1,190 @@
+/* Стили для карточек квартир */
+.apartments__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: #2D343C;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card.selected {
+  border: 2px solid #D4C17F;
+}
+
+.card__img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card__img {
+  transform: scale(1.05);
+}
+
+.card__content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 12px;
+  color: #D4C17F;
+  line-height: 1.3;
+}
+
+.card__price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.card__features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.card__feature {
+  background: rgba(212, 193, 127, 0.1);
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card__actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  width: 100%;
+  justify-content: space-between; /* Равномерное распределение */
+}
+
+.btn-details, .btn-select {
+  width: 50% !important;
+  box-sizing: border-box !important;
+  flex: 1; /* Равная ширина */
+  padding: 10px 5px; /* Оптимальный padding */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px; /* Фиксированная высота */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Текст в одну строку */
+  min-width: 0; /* Для правильного сжатия текста */
+}
+
+/* Стили для кнопки "Подробнее" */
+.btn-details {
+  background: rgba(212, 193, 127, 0.2);
+  color: #D4C17F;
+  border: 1px solid rgba(212, 193, 127, 0.3); /* Добавим границу */
+}
+
+.btn-details:hover {
+  background: rgba(212, 193, 127, 0.3);
+}
+
+/* Стили для кнопки "В избранное" */
+.btn-select {
+  background: rgba(212, 193, 127, 0.5);
+  color: white;
+  border: 1px solid rgba(212, 193, 127, 0.6); /* Добавим границу */
+}
+
+.btn-select:hover {
+  background: rgba(212, 193, 127, 0.7);
+}
+
+/* Стиль для выбранного состояния */
+.btn-select.selected {
+  background: #D4C17F;
+  color: #242B33;
+  font-weight: 600;
+}
+
+/* Индикатор избранного */
+.favorite-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #D4C17F;
+  color: #242B33;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 480px) {
+  .btn-details, .btn-select {
+    font-size: 12px;
+    padding: 8px 3px;
+  }
+}
+
+/* Гарантируем, что текст не будет переноситься */
+.card__actions {
+  white-space: nowrap;
+}
+
+/* Фикс для длинных текстов */
+.btn-select, .btn-details {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Специальные стили для иконок в характеристиках */
+.card__feature.has-pool:before {
+  content: '🏊';
+  margin-right: 4px;
+}
+
+.card__feature.has-service:before {
+  content: '🛎️';
+  margin-right: 4px;
+}
+
+.card__feature.rooms:before {
+  content: '🚪';
+  margin-right: 4px;
+}
