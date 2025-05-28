@@ -2,7 +2,6 @@ import './App.css';
 import './index.css';
 import { Routes, Route } from 'react-router-dom';
 import Header from './layouts/Header';
-import Main from './layouts/Main';
 import About from './layouts/About';
 import Apartments from './layouts/Apartments';
 import Cta from './layouts/Cta';
