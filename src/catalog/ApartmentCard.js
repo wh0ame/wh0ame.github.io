@@ -2,20 +2,20 @@ import React from 'react';
 
 export default function ApartmentCard({ apartment, isSelected, onSelect, onDetailsClick }) {
   const handleDetailsClick = (e) => {
-    e.stopPropagation();
-    console.log('Details clicked:', apartment.id);
-    onDetailsClick(apartment);
-  };
+  e.stopPropagation();
+  console.log('Details clicked:', apartment.id);
+  onDetailsClick(apartment); // Передаем весь объект apartment
+};
 
-  const handleSelectClick = async (e) => {
-    e.stopPropagation();
-    console.log('Favorite button clicked:', apartment.id);
-    try {
-      await onSelect(apartment.id);
-    } catch (error) {
-      console.error('Error handling favorite:', error);
-    }
-  };
+const handleSelectClick = async (e) => {
+  e.stopPropagation();
+  console.log('Favorite button clicked:', apartment.id);
+  try {
+    await onSelect(apartment.id); // Передаем только id
+  } catch (error) {
+    console.error('Error handling favorite:', error);
+  }
+};
 
   return (
     <div className={`card ${isSelected ? 'selected' : ''}`}>

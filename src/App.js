@@ -1,5 +1,8 @@
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import Header from './layouts/Header';
 import Main from './layouts/Main';
 import About from './layouts/About';
@@ -17,6 +20,12 @@ import Ipoteka from './Ipoteka/Ipoteka';
 import Contacts from './contacts/Contacts';
 
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  }, []);
   return (
     <div className="app">
       
