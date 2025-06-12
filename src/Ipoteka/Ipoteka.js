@@ -82,7 +82,7 @@ export default function Ipoteka() {
             <SmallHeader />
             <div className="ipoteka-container">
                 <div className="ipoteka-card">
-                    <h1 className="ipoteka-title">Калькулятор ипотечного кредитования</h1>
+                    <h1 className="ipoteka-title">Калькулятор кредита</h1>
                     
                     <div className="ipoteka-inputs">
                         <div className="input-group">

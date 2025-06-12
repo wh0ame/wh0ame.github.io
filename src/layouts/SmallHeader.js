@@ -35,7 +35,7 @@ function SmallHeader() {
                       <Link to="/catalog">Каталог квартир</Link>
                     </li>
                     <li>
-                      <Link to="/ipoteka">Ипотека</Link>
+                      <Link to="/ipoteka">Кредит</Link>
                     </li>
                     <li>
                       <Link to="/contacts">Контакты</Link>
